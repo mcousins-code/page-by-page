@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Try raising the problem informally
+      </h1>
+
+      <p>This is when you speak to your employer about the problem. </p>
+
+      <h2 class="govuk-heading-l">
+        Why is it good to try speaking to your employer?
+      </h2>
+
+      <p>You may feel nervous about raising a problem, but employers are often willing to sort problems quickly without going through a formal procedure.<p>
+
+      <p>Sometimes speaking with the person can show there was a misunderstanding that can easily be sorted out.<p>
+
+      <p>Raising your problem informally first can help you:
+        <ul class="govuk-list govuk-list--bullet">
+          <li>sort things out more quickly and easily</li>
+          <li>avoid the stress of more formal routes</li>
+        </ul>
+
+      <p>You can still try more formal steps afterwards.<p>
+
+      <p>For very serious issues, for example sexual harassment or whistleblowing, an informal approach may not be appropriate for you. You can raise a formal complaint (a ‘grievance’).<p>
+
+      <h2 class="govuk-heading-l">
+      How to raise a problem informally
+      </h2>
+
+      <p>You can ask your employer or a manager for some time to speak with them. You could do this by email.<p>
+
+      <p>You might both agree to have an informal chat or a more structured meeting to discuss the issue. This could be in person or on a voice or video call.<p>
+
+      <p>Put anything you agree with your employer or manager in writing. This could be an email.<p>
+
+      <h2 class="govuk-heading-l">
+      Time limits
+      </h2>
+
+      <p>You usually have 3 months minus 1 day to notify us of a tribunal claim. When this runs from will depend on the type of claim you are making. This time limit continues to run even if you raise the problem with your employer.<p>
+      <p> If you are unsure about the time limit for your claim, you might want to get legal advice.<p>
+
+      <h2 class="govuk-heading-l">
+      If you need more advice on speaking to your employer
+      </h2>
+
+      <p>You can contact our helpline:<p>
+
+        {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+
+  {{ govukInsetText({
+    text: "Telephone: 0300 123 1100"
+  }) }}
+
+  {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+{{ govukCheckboxes({
+  idPrefix: "waste",
+  name: "waste",
+  fieldset: {
+    legend: {
+      text: "",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: ""
+  },
+  items: [
+    {
+      value: "yes",
+      text: "I am happy I have tried raising the problem informally or that this wasn't appropriate"
+    }
+  ]
+}) }}
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Continue to 'Try raising the problem formally'",
+  href: "/formal",
+  isStartButton: true
+}) }}
+
+    </div>
+  </div>
+
+{% endblock %}

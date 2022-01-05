@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Going to an employment tribunal
+      </h1>
+
+      <h2 class="govuk-heading-l">
+          What is going to an employment tribunal like?
+      </h2>
+
+      <p>Going to an employment tribunal:
+        <ul class="govuk-list govuk-list--bullet">
+          <li>takes a long time - you could wait up to 1 year for your final hearing</li>
+          <li>is a public process - anyone can attend the hearing</li>
+          <li>has a limited number of outcomes</li>
+          <li>does not guarantee you will win</li>
+        </ul>
+
+      <p>For an employment tribunal hearing you will have to:
+        <ul class="govuk-list govuk-list--bullet">
+          <li>prepare all the paperwork</li>
+          <li>keep to the judge’s strict timetable and deadlines</li>
+          <li>stand up and give evidence</li>
+        </ul>
+
+        {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+
+{{ govukInsetText({
+  text: "Less than 1% of all claims that go to a tribunal end up with an award."
+}) }}
+
+<h2 class="govuk-heading-l">
+    How to make a tribunal claim
+</h2>
+
+<p>You still need an Acas certificate to make a claim to an employment tribunal. You will use this certificate when you complete an employment tribunal claim form, called an ET1. You can find this form on the government website.<p>
+
+<p>You will need to complete our notification form to request a certificate.<p>
+
+  <p>The form takes about 5 minutes to complete.<p>
+
+  <p>You will need:
+    <ul class="govuk-list govuk-list--bullet">
+      <li>your phone number and email address</li>
+      <li>your employer’s full legal name and address - see your payslip, contract, P60 or P45 for this</li>
+      <li>details about what’s happened</li>
+    </ul>
+
+    <a href="#" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
+      Start form
+      <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+        <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
+      </svg>
+    </a>
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+  {{ govukButton({
+    text: "I've changed my mind. I want to try early conciliation.",
+    classes: "govuk-button--secondary",
+    href: "/early",
+    isStartButton: true
+  }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

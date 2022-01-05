@@ -1,0 +1,134 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Try raising the problem formally
+      </h1>
+
+      <h2 class="govuk-heading-l">
+        Check if you can raise a grievance
+      </h2>
+
+      <p>Raising a grievance is where you make a formal complaint about a work problem to your employer.</p>
+
+      <h3 class="govuk-heading-m">
+        Why is it good to raise a grievance?
+      </h3>
+
+      <p>Raising a grievance will mean:
+        <ul class="govuk-list govuk-list--bullet">
+          <li>your employer knows about the problem and has an opportunity to sort it out</li>
+          <li>you can have a meeting to discuss the problem and try to find a way to sort it out</li>
+          <li>you would be able to show to a judge that you have followed all the necessary steps, if your claim does go to an employment tribunal</li>
+        </ul>
+
+        <h3 class="govuk-heading-m">
+          How to raise a grievance
+        </h3>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>check your employer's grievance policy, if they have one</li>
+          <li>send an email or letter to your employer saying you are making a complaint, why and what you want them to do about it</li>
+          <li>go to any meeting your employer organises to discuss the grievance</li>
+        </ul>
+
+        <h2 class="govuk-heading-l">
+        Check if you can make an appeal
+        </h2>
+
+        <p>You can appeal a:
+          <ul class="govuk-list govuk-list--bullet">
+            <li>dismissal</li>
+            <li>disciplinary outcome</li>
+            <li>grievance outcome</li>
+            <li>flexible working request</li>
+          </ul>
+
+        <h3 class="govuk-heading-m">
+        Why is it good to make an appeal?
+        </h3>
+
+        <p>Making an appeal will mean:
+          <ul class="govuk-list govuk-list--bullet">
+            <li>your employer knows you think their decision was unfair</li>
+            <li>your employer should look again to see if they have followed a fair process</li>
+            <li>you would be able to show to a judge that you have followed all the necessary steps, if your claim does go to an employment tribunal</li>
+          </ul>
+
+        <h3 class="govuk-heading-m">
+        How to make an appeal
+        </h3>
+
+        <p>Send an email or letter to your employer giving the reasons why you feel the outcome or decision was unfair. Your employer might have a policy or process for this.<p>
+
+        <p>They should follow an appeal procedure to review the points you’ve raised in your appeal.<p>
+
+        <p>Go to any appeal meeting your employer organises.<p>
+
+          <h2 class="govuk-heading-l">
+          Time limits
+          </h2>
+
+          <p>You usually have 3 months minus 1 day to notify us of a tribunal claim. When this runs from will depend on the type of claim you are making. This time limit continues to run even if you raise the problem formally with your employer.<p>
+          <p> If you are unsure about the time limit for your claim, you might want to get legal advice.<p>
+
+          <h2 class="govuk-heading-l">
+          If you need more advice on raising a grievance or appeal:
+          </h2>
+
+          <p>You can contact our helpline:<p>
+
+            {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+
+      {{ govukInsetText({
+        text: "Telephone: 0300 123 1100"
+      }) }}
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+    {{ govukCheckboxes({
+      idPrefix: "waste",
+      name: "waste",
+      fieldset: {
+        legend: {
+          text: "",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      hint: {
+        text: ""
+      },
+      items: [
+        {
+          value: "yes",
+          text: "I am happy I have tried raising the problem formally with my employer"
+        }
+      ]
+    }) }}
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+      text: "Continue to 'Try early conciliation'",
+      href: "/early",
+      isStartButton: true
+    }) }}
+
+
+    </div>
+  </div>
+
+{% endblock %}
